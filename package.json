@@ -1,0 +1,24 @@
+{
+  "name": "image-gen",
+  "version": "1.0.0",
+  "description": "open ai api play",
+  "main": "sentiment.js",
+  "author": "vorsakha",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "image": "prettier --write . && node image.js",
+    "var": "prettier --write . && node imageVariation.js",
+    "sentiment": "prettier --write . && node sentiment.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.1.0",
+    "ora": "^6.1.2",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "prettier": "2.7.1"
+  }
+}
