@@ -20,9 +20,11 @@ const generateImageVariation = async (image) => {
       "256x256" // 256x256 | 512×512 | 1024×1024
     );
 
-    response.data.data.forEach((image, index) => {
-      downloadImage(image.url, `./images/${index}.png`, () =>
-        loading.succeed(`Image ${index} downloaded successfully.`)
+    response.data.data.forEach((res, index) => {
+      downloadImage(
+        res.url,
+        `./images/${image.replace(".png", "")}-${index}.png`,
+        () => loading.succeed(`Image ${index} downloaded successfully.`)
       );
     });
   } catch (error) {
@@ -36,4 +38,4 @@ const generateImageVariation = async (image) => {
   }
 };
 
-generateImageVariation(process.argv.slice(2).join(" ") || "./example.png");
+generateImageVariation(process.argv.slice(2).join(" ") || "./sample.png");
