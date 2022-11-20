@@ -9,7 +9,8 @@
   "scripts": {
     "image": "prettier --write . && node image.js",
     "var": "prettier --write . && node imageVariation.js",
-    "sentiment": "prettier --write . && node sentiment.js"
+    "sentiment": "prettier --write . && node sentiment.js",
+    "input": "prettier --write . && node input.js"
   },
   "dependencies": {
     "dotenv": "^16.0.3",
