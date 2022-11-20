@@ -1,7 +1,13 @@
+import ora from "ora";
+import { openai } from "./openai/index.js";
+
+const loading = ora("Loading").start();
+
 const getSentiment = async (phrase) => {
   try {
     const response = await openai.createCompletion({
       model: "text-davinci-002",
+      // eslint-disable-next-line no-useless-escape
       prompt: `Decide whether a phrase's sentiment is positive, neutral, or negative.\n\nphrase: \"${phrase}\"\nSentiment:`,
       temperature: 0,
       max_tokens: 6, // tokens = words

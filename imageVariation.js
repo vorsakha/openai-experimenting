@@ -1,14 +1,7 @@
-import * as dotenv from "dotenv";
 import ora from "ora";
 import fs from "fs";
-import { Configuration, OpenAIApi } from "openai";
 import downloadImage from "./utils/donwloadImage.js";
-
-dotenv.config();
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
+import { openai } from "./openai/index.js";
 
 const loading = ora("Loading").start();
 
@@ -38,4 +31,4 @@ const generateImageVariation = async (image) => {
   }
 };
 
-generateImageVariation(process.argv.slice(2).join(" ") || "./sample.png");
+generateImageVariation(process.argv.slice(2).join(" ") || "./example.png");
